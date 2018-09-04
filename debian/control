@@ -33,7 +33,7 @@ Build-Depends:
  libvpx-dev,
  libsystemd-dev,
  libinput-dev (>= 0.8.0),
- wayland-protocols-imx (>= 1.8),
+ wayland-protocols (>= 1.8),
 Standards-Version: 4.1.1
 
 Package: weston-imx
