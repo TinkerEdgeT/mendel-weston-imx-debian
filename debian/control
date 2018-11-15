@@ -38,7 +38,7 @@ Standards-Version: 4.1.1
 
 Package: weston-imx
 Section: libdevel
-Architecture: all
+Architecture: any
 Priority: extra
 Depends:
  libinput10,
