@@ -1,3 +1,9 @@
+weston-imx (3.0.0-3) mendel-beaker; urgency=medium
+
+  * Add imx-gpu-viv to runtime dependencies
+
+ -- AIY Projects <support-aiyprojects@google.com> Fri, 18 Jan 2019 16:42:00 -0800
+
 weston-imx (3.0.0-2) mendel-beaker; urgency=medium
 
   * Cut for beaker release and normalization of version.

@@ -41,6 +41,7 @@ Section: libdevel
 Architecture: any
 Priority: extra
 Depends:
+ imx-gpu-viv,
  libinput10,
  libxcb-shape0,
  libxcb-composite0,
