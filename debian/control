@@ -1,7 +1,7 @@
 Source: weston-imx
 Section: x11
 Priority: optional
-Maintainer: AIY Projects <support-aiyprojects@google.com>
+Maintainer: AIY Projects <coral-support@google.com>
 Build-Depends:
  debhelper (>= 10),
  quilt,
