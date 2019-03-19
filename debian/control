@@ -49,4 +49,5 @@ Depends:
  ${misc:Depends}
 Multi-Arch: foreign
 Provides: weston
+Conflicts: weston
 Description: Weston compositor w/ IMX support.
