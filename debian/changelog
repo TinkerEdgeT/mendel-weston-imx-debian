@@ -8,13 +8,13 @@ weston-imx (3.0.0-3) mendel-beaker; urgency=medium
 
   * Add imx-gpu-viv to runtime dependencies
 
- -- Coral <coral-support@google.com> Fri, 18 Jan 2019 16:42:00 -0800
+ -- Coral <coral-support@google.com>  Fri, 18 Jan 2019 16:42:00 -0800
 
 weston-imx (3.0.0-2) mendel-beaker; urgency=medium
 
   * Cut for beaker release and normalization of version.
 
- -- Coral <coral-support@google.com> Wed, 16 Jan 2019 12:00:00 -0800
+ -- Coral <coral-support@google.com>  Wed, 16 Jan 2019 12:00:00 -0800
 
 weston-imx (3.0.0-1) unstable; urgency=medium
 

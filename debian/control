@@ -51,3 +51,5 @@ Multi-Arch: foreign
 Provides: weston
 Conflicts: weston
 Description: Weston compositor w/ IMX support.
+ Patched version of Weston compositor, with
+ extra support for the IMX platform.
