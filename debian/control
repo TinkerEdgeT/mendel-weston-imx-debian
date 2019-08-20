@@ -33,6 +33,7 @@ Build-Depends:
  libvpx-dev,
  libsystemd-dev,
  libinput-dev (>= 0.8.0),
+ libdrm-imx-dev (>= 2.4.84+imx),
  wayland-protocols (>= 1.8),
 Standards-Version: 4.1.1
 

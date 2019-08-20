@@ -1,4 +1,4 @@
-weston-imx: package-name-doesnt-match-sonames libweston-3-0 libweston-desktop-3-0
+weston-imx: package-name-doesnt-match-sonames libweston-5-0 libweston-desktop-5-0
 weston-imx: non-empty-dependency_libs-in-la-file *
 weston-imx: non-dev-pkg-with-shlib-symlink *
 weston-imx: shlib-in-multi-arch-foreign-package *
