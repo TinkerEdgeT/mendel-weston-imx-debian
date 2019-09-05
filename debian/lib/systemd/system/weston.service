@@ -1,40 +1,60 @@
 [Unit]
 Description=Weston Wayland Compositor (on tty7)
-RequiresMountsFor=/run
-Conflicts=getty@tty7.service plymouth-quit.service
-After=systemd-user-sessions.service getty@tty7.service plymouth-quit-wait.service
+Documentation=man:weston(1) man:weston.ini(5)
+Documentation=http://wayland.freedesktop.org/
+
+# Make sure we are started after logins are permitted.
+After=systemd-user-sessions.service
+
+# If Plymouth is used, we want to start when it is on its way out.
+After=plymouth-quit-wait.service
+
+# D-Bus is necessary for contacting logind. Logind is required.
+Wants=dbus.socket
+After=dbus.socket
+
+# This scope is created by pam_systemd when logging in as the user.
+# This directive is a workaround to a systemd bug, where the setup of the
+# user session by PAM has some race condition, possibly leading to a failure.
+# See README for more details.
+After=session-c1.scope
+
+# Since we are part of the graphical session, make sure we are started before
+# it is complete.
+Before=graphical.target
+
+# Prevent starting on systems without virtual consoles, Weston requires one
+# for now.
+ConditionPathExists=/dev/tty0
 
 [Service]
-User=mendel
-WorkingDirectory=/home/mendel
-PermissionsStartOnly=true
-Restart=always
 
-# Log us in via PAM so we get our XDG & co. environment and
-# are treated as logged in so we can use the tty:
+# Requires systemd-notify.so Weston plugin.
+Type=notify
+ExecStart=/usr/bin/weston --log=${XDG_RUNTIME_DIR}/weston.log
+
+# Optional watchdog setup
+TimeoutStartSec=60
+WatchdogSec=20
+
+# The user to run Weston as.
+User=mendel
+
+# Set up a full user session for the user, required by Weston.
 PAMName=login
 
-# Grab tty7
-UtmpIdentifier=tty7
+# A virtual terminal is needed.
 TTYPath=/dev/tty7
 TTYReset=yes
 TTYVHangup=yes
 TTYVTDisallocate=yes
 
-# stderr to journal so our logging doesn't get thrown into /dev/null
-StandardOutput=tty
-StandardInput=tty
-StandardError=journal
+# Fail to start if not controlling the tty.
+StandardInput=tty-fail
 
-EnvironmentFile=-/etc/default/weston
+# Log this user with utmp, letting it show up with commands 'w' and 'who'.
+UtmpIdentifier=tty7
+UtmpMode=user
 
-# Weston does not successfully change VT, nor does systemd place us on
-# the VT it just activated for us. Switch manually:
-ExecStartPre=/bin/chvt 7
-ExecStart=/usr/bin/weston-launch -- --log=${XDG_RUNTIME_DIR}/weston.log
-
-IgnoreSIGPIPE=no
-
-[Install]
-WantedBy=multi-user.target
-
+[install]
+WantedBy=graphical.target

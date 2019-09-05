@@ -4,7 +4,7 @@
 	dh $@
 
 override_dh_auto_configure:
-	        dh_auto_configure -- --disable-imxg2d
+	        dh_auto_configure -- --disable-imxg2d --enable-dbus --enable-systemd-login --enable-systemd-notify
 
 override_dh_auto_test:
 	true
