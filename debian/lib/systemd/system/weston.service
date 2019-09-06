@@ -56,5 +56,5 @@ StandardInput=tty-fail
 UtmpIdentifier=tty7
 UtmpMode=user
 
-[install]
+[Install]
 WantedBy=graphical.target
