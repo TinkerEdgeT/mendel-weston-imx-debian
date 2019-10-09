@@ -41,7 +41,7 @@ Standards-Version: 4.1.1
 Package: weston-imx
 Section: libdevel
 Architecture: any
-Priority: extra
+Priority: optional
 Depends:
  imx-gpu-viv,
  libinput10,
@@ -49,7 +49,6 @@ Depends:
  libxcb-composite0,
  ${shlibs:Depends},
  ${misc:Depends}
-Multi-Arch: foreign
 Provides: weston
 Conflicts: weston
 Description: Weston compositor w/ IMX support.
