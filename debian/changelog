@@ -1,3 +1,9 @@
+weston-imx (5.0.0-2) mendel-day; urgency=medium
+
+  * Revert a bunch of changes that cause very slow 4K playback.
+
+ -- Coral <coral-support@google.com>  Tue, 22 Oct 2019 15:39:25 -0500
+
 weston-imx (5.0.0-1) mendel-chef; urgency=medium
 
   * Import rel_imx_4.14.98_2.0.0_ga
