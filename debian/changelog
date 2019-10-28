@@ -1,3 +1,10 @@
+weston-imx (5.0.0-3) mendel-day; urgency=medium
+
+  * Use gbm-format=argb8888 for primary output plane
+  * Revert "Temporarily disable dmabuf video -> overlay"
+
+ -- Coral <coral-support@google.com>  Mon, 28 Oct 2019 12:02:48 -0500
+
 weston-imx (5.0.0-2) mendel-day; urgency=medium
 
   * Revert a bunch of changes that cause very slow 4K playback.
