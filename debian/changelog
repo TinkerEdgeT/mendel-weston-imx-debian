@@ -1,3 +1,9 @@
+weston-imx (5.0.0-4) mendel-day; urgency=medium
+
+  * weston: Add set up SIGUSR1 blocking early using pthread_sigmask()
+
+ -- Coral <coral-support@google.com>  Fri, 08 Nov 2019 14:44:44 -0600
+
 weston-imx (5.0.0-3) mendel-day; urgency=medium
 
   * Use gbm-format=argb8888 for primary output plane
